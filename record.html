@@ -4,9 +4,11 @@
 <head>
     <title>Рекорд Магучіх</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body bgcolor="#f8fafc" text="#00000" link="#023e8a" vlink="#023e8a">
+    <div id="greeting" style="text-align: center; font-size: 20px; font-weight: bold; margin: 20px;"></div>
     <div class="pos">
         <a href="index.html"><img src="images/home.png"></a>
         <a href="athletes.html"><img src="images/sport.png"></a>
@@ -57,7 +59,19 @@
         </div>
         </p>
     </div>
-    <script type="text/javascript" language="JavaScript">// <![CDATA[
+    <script type="text/javascript" language="JavaScript">
+        window.onload = function () {
+            var n1 = window.prompt("Введіть своє ім'я.", "Ваше ім'я");
+            var n2 = window.prompt("Введіть своє прізвище.", "Ваше прізвище");
+
+            var greetingDiv = document.getElementById('greeting');
+
+            if (n1 == null || n2 == null) {
+                greetingDiv.innerHTML = "Дія була відмінена";
+            } else {
+                greetingDiv.innerHTML = "Вітаємо, " + n2 + " " + n1 + " " + "! Раді тебе бачити!";
+            }
+        };
         var res = "34132"; // Ключ відповідей
 
         function check_me() {
@@ -103,16 +117,12 @@
             var nok = 0;
             var i, s;
 
-            for (i = 0; i < answ.length; i++) {
-                nok += (answ.charAt(i) == "1") ? 1 : 0;
-            }
-
-            if (nok == 5) s = "ВІДМІННО";
-            else if (nok >= 4) s = "ДОБРЕ";
+            for (i = 0; i < answ.length; i++) { nok += (answ.charAt(i) == "1") ? 1 : 0; } if (nok == 5) s = "ВІДМІННО"; else if
+                (nok >= 4) s = "ДОБРЕ";
             else if (nok >= 3) s = "ЗАДОВІЛЬНО";
             else s = "НЕЗАДОВІЛЬНО";
 
-            document.test.s1.value = "Кількість правильних відповідей: " + nok + ". Ваша оцінка: " + s + ". Подивіться на вікно поруч із номером питання. Якщо відповідь правильна, там (+). Якщо ні, там (-).";
+            document.test.s1.value = "Кількість правильних відповідей: " + nok + ". Ваша оцінка: " + s + ". Подивіться на вікно поруч із номером питання.Якщо відповідь правильна, там(+).Якщо ні, там(-).";
 
             var f = document.test;
             f.T1.value = (answ.charAt(0) == "1") ? " + " : " - ";
@@ -132,6 +142,9 @@
         }
         // ]]>
     </script>
+    <noscript>
+        <p>Ваш Веббраузер не підтримує JavaScript</p>
+    </noscript>
     <center><b>Що ви знаєте про Ярославу Магучіх?</b></center><br /><br />
     &nbsp;&nbsp;&nbsp;<span style="color:#006699;text-decoration:underline;cursor:pointer;"
         onclick="document.getElementById('instruction').style.display = showhide(document.getElementById('instruction').style.display)">
@@ -145,14 +158,16 @@
             <li>Погляньте у віконце поруч із номером завдання. Якщо відповідь правильна, там буде (+). Якщо Ви
                 помилилися — (-).</li>
             <li>За кожну правильну відповідь нараховується 1 бал;</li>
-            <li>Оцінки: менше 2.5 балів — НЕЗАДОВІЛЬНО, від 2.5 до 3.75 — ЗАДОВІЛЬНО, від 3.75 до 5 — ДОБРЕ, 5 балів —
+            <li>Оцінки: менше 2.5 балів — НЕЗАДОВІЛЬНО, від 2.5 до 3.75 — ЗАДОВІЛЬНО, від 3.75 до 5 — ДОБРЕ, 5
+                балів —
                 ВІДМІННО;</li>
             <li>Щоб скинути результат тестування, натисніть кнопку "Скинути відповіді";</li>
         </ul>
     </div>
     <form name="test">
         <ol>
-            <li><INPUT type="text" size="1" value="" name="T1" /><b> Яку висоту подолала Ярослава Магучіх, встановивши
+            <li><INPUT type="text" size="1" value="" name="T1" /><b> Яку висоту подолала Ярослава Магучіх,
+                    встановивши
                     світовий рекорд?</b><br />
                 <input type="radio" value="0" name="Q1" /> 2.07<br />
                 <input type="radio" value="1" name="Q1" /> 2.09<br />
@@ -160,7 +175,8 @@
                 <input type="radio" value="3" name="Q1" /> 2.15<br />
                 <br />
             </li>
-            <li><INPUT type="text" size="1" value="" name="T2" /><b> У якому місті було встановлено світовий рекорд у
+            <li><INPUT type="text" size="1" value="" name="T2" /><b> У якому місті було встановлено світовий
+                    рекорд у
                     2024 році?</b><br />
                 <input type="radio" value="0" name="Q2" /> Брюссель<br />
                 <input type="radio" value="1" name="Q2" /> Рим<br />

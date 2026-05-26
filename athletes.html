@@ -4,6 +4,7 @@
 <head>
     <title>Найкращі спортсменки</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body bgcolor="#f8fafc" text="#00000" link="#023e8a" vlink="#023e8a">
@@ -111,6 +112,20 @@
                 однією з найкращих українських легкоатлеток в історії.</p>
         </div>
     </div>
+    <script src="jump.js"></script>
+    <form id="calcForm">
+        <h3 style="text-align: center;">Калькулятор стрибка</h3>
+
+        <label>Зріст атлета (м):</label>
+        <input type="number" id="height" step="0.01" placeholder="напр. 1.80">
+
+        <label>Результат стрибка (м):</label>
+        <input type="number" id="jump" step="0.01" placeholder="напр. 2.10">
+
+        <input type="button" value="РОЗРАХУВАТИ" onclick="calculateLeap()">
+
+        <div id="textrez">Результат з'явиться тут</div>
+    </form>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-left">
