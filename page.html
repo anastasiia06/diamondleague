@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Обробка даних</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <h2>Дякуємо, дані отримано!</h2>
+        <p>Ми успішно прийняли ваш відгук.Дякуємо!</p>
+        <a href="index.html">Повернутися на головну</a>
+    </div>
+    <div id="result-display"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const container = document.getElementById('result-display');
+        let html = "<h2>Ви надіслали такі дані:</h2><ul>";
+        for (const [key, value] of params.entries()) {
+            html += `<li><b>${key}:</b> ${value}</li>`;
+        }
+        html += "</ul>";
+        container.innerHTML = html;
+    </script>
+</body>
+
+
+</html>

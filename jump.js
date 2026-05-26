@@ -13,3 +13,18 @@ function calculateLeap() {
         document.getElementById('textrez').innerHTML = "Результат: стрибок нижче зросту або дорівнює йому.";
     }
 }
+function checkFields() {
+
+    var fields = document.querySelectorAll('#calcForm .req-field');
+
+    fields.forEach(function (field) {
+        if (field.value === "") {
+
+            field.style.border = "2px solid red";
+            field.placeholder = "Це поле обов'язкове!";
+        } else {
+
+            field.style.border = "1px solid #ccc";
+        }
+    });
+}

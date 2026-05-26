@@ -117,12 +117,12 @@
         <h3 style="text-align: center;">Калькулятор стрибка</h3>
 
         <label>Зріст атлета (м):</label>
-        <input type="number" id="height" step="0.01" placeholder="напр. 1.80">
+        <input type="number" class="req-field" id="height" step="0.01" placeholder="напр. 1.80">
 
         <label>Результат стрибка (м):</label>
-        <input type="number" id="jump" step="0.01" placeholder="напр. 2.10">
+        <input type="number" class="req-field" id="jump" step="0.01" placeholder="напр. 2.10">
 
-        <input type="button" value="РОЗРАХУВАТИ" onclick="calculateLeap()">
+        <input type="button" value="РОЗРАХУВАТИ" onclick="checkFields(); calculateLeap();">
 
         <div id="textrez">Результат з'явиться тут</div>
     </form>
